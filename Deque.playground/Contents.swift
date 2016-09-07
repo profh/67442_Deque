@@ -47,13 +47,13 @@ public struct Deque<T> {
 
 // INFORMAL TESTING
 // Create a deque and put some elements on it already.
-var dequeOfCards = Deque(array: ["3ofHearts", "10ofSpades", "AceofSpades", "2ofDiamons", "KingofClubs"])
+var dequeOfCards = Deque(array: ["3ofHearts", "10ofSpades", "AceofSpades", "2ofDiamonds", "KingofClubs"])
 print(dequeOfCards.array)
 
 // Adds an element to the end of the deque.
 dequeOfCards.pushBack("9ofHearts")
 
-// Deque is now ["3ofHearts", "10ofSpades", "AceofSpades", "2ofDiamons", "KingofClubs", "9ofHearts"]
+// Deque is now ["3ofHearts", "10ofSpades", "AceofSpades", "2ofDiamonds", "KingofClubs", "9ofHearts"]
 print(dequeOfCards.array)
 
 // Remove and return the first element in the deque. This returns "3ofHearts".
