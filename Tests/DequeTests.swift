@@ -15,7 +15,7 @@ class DequeTest: XCTestCase {
   func testOneElement() {
     var deque = Deque<Int>()
     
-    deque.pushFront(123)
+    deque.pushFront(obj: 123)
     XCTAssertFalse(deque.isEmpty)
     XCTAssertEqual(deque.count, 1)
     XCTAssertEqual(deque.peekFirst(), 123)
@@ -32,9 +32,9 @@ class DequeTest: XCTestCase {
   func testMultipleElements() {
     var deque = Deque<Int>()
     
-    deque.pushBack(123)
-    deque.pushFront(456)
-    deque.pushBack(789)
+    deque.pushBack(obj: 123)
+    deque.pushFront(obj: 456)
+    deque.pushBack(obj: 789)
     XCTAssertFalse(deque.isEmpty)
     XCTAssertEqual(deque.count, 3)
     XCTAssertEqual(deque.peekFirst(), 456)
@@ -73,27 +73,27 @@ class DequeTest: XCTestCase {
   
   func testCount() {
     var deque = Deque<String>()
-    deque.pushBack("Green Arrow")
-    deque.pushBack("Superman")
-    deque.pushFront("Batman")
+    deque.pushBack(obj: "Green Arrow")
+    deque.pushBack(obj: "Superman")
+    deque.pushFront(obj: "Batman")
     XCTAssertFalse(deque.isEmpty)
     XCTAssertEqual(deque.count, 3)
   }
   
   func testPushAndPeekFunctions() {
     var deque = Deque<String>()
-    deque.pushBack("Green Arrow")
-    deque.pushBack("Superman")
-    deque.pushFront("Batman")
+    deque.pushBack(obj: "Green Arrow")
+    deque.pushBack(obj: "Superman")
+    deque.pushFront(obj: "Batman")
     XCTAssertEqual(deque.peekFirst(), "Batman")
     XCTAssertEqual(deque.peekLast(), "Superman")
   }
   
   func testPopFunctions() {
     var deque = Deque<String>()
-    deque.pushBack("Green Arrow")
-    deque.pushBack("Superman")
-    deque.pushFront("Batman")
+    deque.pushBack(obj: "Green Arrow")
+    deque.pushBack(obj: "Superman")
+    deque.pushFront(obj: "Batman")
     XCTAssertEqual(deque.popFront(), "Batman")
     XCTAssertEqual(deque.count, 2)
     XCTAssertEqual(deque.popBack(), "Superman")

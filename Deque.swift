@@ -30,7 +30,7 @@ public struct Deque<T> {
   }
   
   mutating func pushFront(obj: T) {
-    array.insert(obj, atIndex: 0)
+    array.insert(obj, at: 0)
   }
   
   mutating func popBack() -> T? {

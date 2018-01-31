@@ -5,7 +5,18 @@
 */
 
 public struct Deque<T> {
-  private var array = [T]()
+    
+  var array = [T]()
+    
+    // converted from private variable
+  
+    public init(arr: Array<T>) {
+        // Swift 4 returns error if init not implmented
+        // if not explicitly implemented, init is marked 'internal' by default
+        array = arr
+    }
+
+  
   
   public var isEmpty: Bool {
     return array.isEmpty
@@ -28,7 +39,7 @@ public struct Deque<T> {
   }
   
   mutating func pushFront(obj: T) {
-    array.insert(obj, atIndex: 0)
+    array.insert(obj, at: 0)
   }
   
   mutating func popBack() -> T? {
@@ -47,11 +58,11 @@ public struct Deque<T> {
 
 // INFORMAL TESTING
 // Create a deque and put some elements on it already.
-var dequeOfCards = Deque(array: ["3ofHearts", "10ofSpades", "AceofSpades", "2ofDiamonds", "KingofClubs"])
+var dequeOfCards = Deque(arr: ["3ofHearts", "10ofSpades", "AceofSpades", "2ofDiamonds", "KingofClubs"])
 print(dequeOfCards.array)
 
 // Adds an element to the end of the deque.
-dequeOfCards.pushBack("9ofHearts")
+dequeOfCards.pushBack(obj: "9ofHearts")
 
 // Deque is now ["3ofHearts", "10ofSpades", "AceofSpades", "2ofDiamonds", "KingofClubs", "9ofHearts"]
 print(dequeOfCards.array)
